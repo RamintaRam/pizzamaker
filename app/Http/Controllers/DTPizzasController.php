@@ -12,8 +12,14 @@ class DTPizzasController extends BaseAPIController {
 	 */
 	public function index()
 	{
-		//
+        return view('front');
 	}
+
+    public function adminIndex()
+    {
+        return view('back');
+    }
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -23,8 +29,13 @@ class DTPizzasController extends BaseAPIController {
 	 */
 	public function create()
 	{
-		//
+        return view('front');
 	}
+
+    public function adminCreate()
+    {
+        return view('back');
+    }
 
 	/**
 	 * Store a newly created resource in storage.
@@ -32,10 +43,17 @@ class DTPizzasController extends BaseAPIController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+
+    public function store()
+    {
+        return view('front');
+    }
+
+	public function adminStore()
 	{
-		//
+        return view('back');
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -44,9 +62,14 @@ class DTPizzasController extends BaseAPIController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+    public function show($id)
+    {
+        return view('front');
+    }
+
+	public function adminShow($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -58,8 +81,13 @@ class DTPizzasController extends BaseAPIController {
 	 */
 	public function edit($id)
 	{
-		//
+        return view('front');
 	}
+
+    public function adminEdit($id)
+    {
+        return view('back');
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -70,8 +98,13 @@ class DTPizzasController extends BaseAPIController {
 	 */
 	public function update($id)
 	{
-		//
+        return view('front');
 	}
+
+    public function adminUpdate($id)
+    {
+        return view('back');
+    }
 
 	/**
 	 * Remove the specified resource from storage.
@@ -82,7 +115,12 @@ class DTPizzasController extends BaseAPIController {
 	 */
 	public function destroy($id)
 	{
-		//
+        return view('front');
 	}
+
+    public function adminDestroy($id)
+    {
+        return view('back');
+    }
 
 }

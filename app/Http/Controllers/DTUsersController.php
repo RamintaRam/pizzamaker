@@ -15,6 +15,10 @@ class DTUsersController extends Controller {
 		//
 	}
 
+    public function adminIndex()
+    {
+        //
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /dtusers/create
@@ -26,6 +30,11 @@ class DTUsersController extends Controller {
 		//
 	}
 
+    public function adminCreate()
+    {
+        //
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /dtusers
@@ -36,6 +45,11 @@ class DTUsersController extends Controller {
 	{
 		//
 	}
+
+    public function adminStore()
+    {
+        //
+    }
 
 	/**
 	 * Display the specified resource.
@@ -49,6 +63,11 @@ class DTUsersController extends Controller {
 		//
 	}
 
+    public function adminShow($id)
+    {
+        //
+    }
+
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /dtusers/{id}/edit
@@ -60,6 +79,11 @@ class DTUsersController extends Controller {
 	{
 		//
 	}
+
+    public function adminEdit($id)
+    {
+        //
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -73,6 +97,10 @@ class DTUsersController extends Controller {
 		//
 	}
 
+    public function adminUpdate($id)
+    {
+        //
+    }
 	/**
 	 * Remove the specified resource from storage.
 	 * DELETE /dtusers/{id}
@@ -84,5 +112,10 @@ class DTUsersController extends Controller {
 	{
 		//
 	}
+
+    public function adminDestroy($id)
+    {
+        //
+    }
 
 }

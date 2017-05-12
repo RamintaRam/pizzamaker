@@ -10,9 +10,9 @@ class DTPermissionsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function AdminIndex()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -21,9 +21,9 @@ class DTPermissionsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function AdminCreate()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -32,9 +32,9 @@ class DTPermissionsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function AdminStore()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -44,9 +44,9 @@ class DTPermissionsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function AdminShow($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -56,9 +56,9 @@ class DTPermissionsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function AdminEdit($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -68,9 +68,9 @@ class DTPermissionsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function AdminUpdate($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -80,9 +80,9 @@ class DTPermissionsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function AdminDestroy($id)
 	{
-		//
+        return view('back');
 	}
 
 }

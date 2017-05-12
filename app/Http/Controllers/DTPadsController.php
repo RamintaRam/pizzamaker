@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\DTPads;
 use Illuminate\Routing\Controller;
 
 class DTPadsController extends Controller {
@@ -10,9 +11,12 @@ class DTPadsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function adminIndex()
 	{
-		//
+        $conf['list']=DTPads::get()->toArray();
+        $conf['routeKey']='app.pads.show';
+
+        return view('back-list', $conf);
 	}
 
 	/**
@@ -21,9 +25,9 @@ class DTPadsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function adminCreate()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -32,9 +36,9 @@ class DTPadsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function adminStore()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -44,9 +48,9 @@ class DTPadsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function adminShow($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -56,9 +60,9 @@ class DTPadsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function adminEdit($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -68,9 +72,9 @@ class DTPadsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function adminUpdate($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -80,9 +84,9 @@ class DTPadsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function adminDestroy($id)
 	{
-		//
+        return view('back');
 	}
 
 }

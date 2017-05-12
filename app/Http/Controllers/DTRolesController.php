@@ -15,6 +15,11 @@ class DTRolesController extends Controller {
 		//
 	}
 
+    public function adminIndex()
+    {
+        //
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /dtroles/create
@@ -26,6 +31,11 @@ class DTRolesController extends Controller {
 		//
 	}
 
+    public function adminCreate()
+    {
+        //
+    }
+
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /dtroles
@@ -36,6 +46,11 @@ class DTRolesController extends Controller {
 	{
 		//
 	}
+
+    public function adminStore()
+    {
+        //
+    }
 
 	/**
 	 * Display the specified resource.
@@ -49,6 +64,10 @@ class DTRolesController extends Controller {
 		//
 	}
 
+    public function adminShow($id)
+    {
+        //
+    }
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /dtroles/{id}/edit
@@ -60,6 +79,11 @@ class DTRolesController extends Controller {
 	{
 		//
 	}
+
+    public function adminEdit($id)
+    {
+        //
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -73,6 +97,11 @@ class DTRolesController extends Controller {
 		//
 	}
 
+    public function adminUpdate($id)
+    {
+        //
+    }
+
 	/**
 	 * Remove the specified resource from storage.
 	 * DELETE /dtroles/{id}
@@ -84,5 +113,10 @@ class DTRolesController extends Controller {
 	{
 		//
 	}
+
+    public function adminDestroy($id)
+    {
+        //
+    }
 
 }

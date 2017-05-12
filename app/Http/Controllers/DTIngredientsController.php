@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\DTIngredients;
 use Illuminate\Routing\Controller;
 
 class DTIngredientsController extends Controller {
@@ -10,9 +11,14 @@ class DTIngredientsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function adminIndex()
 	{
-		//
+		$conf['list']=DTIngredients::get()->toArray();
+		$conf['routeEdit']='app.ingredients.show';
+        $conf['routeView']='app.ingredients.show';
+        $conf['routeDelete']='app.ingredients.delete';
+
+	    return view('back-list', $conf);
 	}
 
 	/**
@@ -21,7 +27,7 @@ class DTIngredientsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function adminCreate()
 	{
 		//
 	}
@@ -32,9 +38,9 @@ class DTIngredientsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function AdminStore()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -44,9 +50,9 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function AdminShow($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -56,9 +62,9 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function AdminEdit($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -68,9 +74,9 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function AdminUpdate($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -80,9 +86,9 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function AdminDestroy($id)
 	{
-		//
+        return view('back');
 	}
 
 }

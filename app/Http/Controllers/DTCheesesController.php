@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\DTCheeses;
 use Illuminate\Routing\Controller;
 
 class DTCheesesController extends Controller {
@@ -10,9 +11,12 @@ class DTCheesesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function adminIndex()
 	{
-		//
+        $conf['list']=DTCheeses::get()->toArray();
+        $conf['routeKey']='app.cheeses.show';
+
+        return view('back-list', $conf);
 	}
 
 	/**
@@ -21,9 +25,9 @@ class DTCheesesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function adminCreate()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -32,9 +36,9 @@ class DTCheesesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function adminStore()
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -44,9 +48,9 @@ class DTCheesesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function adminShow($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -56,9 +60,9 @@ class DTCheesesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function AdminEdit($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -68,9 +72,9 @@ class DTCheesesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function AdminUpdate($id)
 	{
-		//
+        return view('back');
 	}
 
 	/**
@@ -80,9 +84,9 @@ class DTCheesesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function AdminDestroy($id)
 	{
-		//
+        return view('back');
 	}
 
 }
