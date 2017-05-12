@@ -60,7 +60,7 @@ class DTCheesesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function AdminEdit($id)
+	public function adminEdit($id)
 	{
         return view('back');
 	}

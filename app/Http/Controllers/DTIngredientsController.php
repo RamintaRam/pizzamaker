@@ -38,9 +38,9 @@ class DTIngredientsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function AdminStore()
+	public function adminStore()
 	{
-        return view('back');
+        return view('single-ingredient');
 	}
 
 	/**
@@ -50,9 +50,13 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function AdminShow($id)
+	public function adminShow($id)
 	{
-        return view('back');
+        $conf['record']=DTIngredients::find($id)->toArray();
+        $conf['routeEdit']='app.ingredients.edit';
+        $conf['routeShow']='app.ingredients.show';
+
+        return view('back-single', $conf);
 	}
 
 	/**
@@ -62,7 +66,7 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function AdminEdit($id)
+	public function adminEdit($id)
 	{
         return view('back');
 	}
@@ -74,7 +78,7 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function AdminUpdate($id)
+	public function adminUpdate($id)
 	{
         return view('back');
 	}
@@ -86,9 +90,13 @@ class DTIngredientsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function AdminDestroy($id)
+	public function adminDestroy($id)
 	{
-        return view('back');
+
+	  //  dd('mes cia');
+
+        DTIngredients::destroy($id);
+//	    return view('back');
 	}
 
 }
