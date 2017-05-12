@@ -10,9 +10,9 @@
             @foreach($list[0] as $key => $value)
                 <th>{{$key}}</th>
             @endforeach
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
 
         </tr>
         </thead>
@@ -24,9 +24,9 @@
                         {{$value}}
                     </td>
                 @endforeach
-                    <td><a href="{{route($routeView, $record['id'])}}"><button style="background-color: darkgreen; color: whitesmoke"> View</button></a></td>
-                    <td><a href="{{route($routeEdit, $record['id'])}}"><button style="background-color: darkgreen; color: whitesmoke">Edit</button ></a></td>
-                    <td><a onclick="deleteItem('{{route($routeDelete, $record['id'])}}')"><button style="background-color: darkgreen; color: whitesmoke">Delete</button ></a></td>
+                <td><a href="{{route($routeView, $record['id'])}}">View</a></td>
+                <td><a href="{{route($routeEdit, $record['id'])}}">Edit</a></td>
+                <td><a onclick="deleteItem('{{route($routeDelete, $record['id'])}}')">Delete</a></td>
             </tr>
         @endforeach
         </tbody>
@@ -36,27 +36,25 @@
 
 @section('script')
     <script>
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        function deleteItem(route) {
 
-        function deleteItem() {
             $.ajax({
-                url : route,
-                type : 'DELETE',
-                dataType : 'json',
-                success : function () {
-                    alert ('DELETED');
+                url: route,
+                type: 'DELETE',
+                data: {},
+                dataType: 'json',
+                success: function () {
+                    alert('DELETED')
                 },
-                error : function () {
-                    alert('ERROR');
+                error: function () {
+                    alert('Error');
                 }
             });
         }
     </script>
-
-
-    @endsection
+@endsection
