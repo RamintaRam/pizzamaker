@@ -29,7 +29,9 @@ class DTIngredientsController extends Controller {
 	 */
 	public function adminCreate()
 	{
-		//
+        $data = request()->all();
+        $record = DTIngredients::create($data);
+        return view('back-form', $record->toArray());
 	}
 
 	/**
@@ -53,7 +55,7 @@ class DTIngredientsController extends Controller {
 	public function adminShow($id)
 	{
         $conf['record']=DTIngredients::find($id)->toArray();
-        $conf['routeEdit']='app.ingredients.edit';
+//        $conf['routeEdit']='app.ingredients.edit';
         $conf['routeShow']='app.ingredients.show';
 
         return view('back-single', $conf);
@@ -68,7 +70,9 @@ class DTIngredientsController extends Controller {
 	 */
 	public function adminEdit($id)
 	{
-        return view('back');
+        $conf['record']=DTIngredients::find($id)->toArray();
+        $conf['routeEdit']='app.ingredients.edit';
+        return view('back-single', $conf);
 	}
 
 	/**

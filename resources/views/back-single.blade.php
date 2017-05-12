@@ -28,6 +28,7 @@
 
                 <td></td>
                 <td><a href="{{route($routeShow, $record['id'])}}">Edit</a></td>
+                <td><a href="{{route($routeEdit, $record['id'])}}">Edit</a></td>
                 {{--<td><a onclick="deleteItem('{{route($routeDelete, $record['id'])}}')">Delete</a></td>--}}
 
         </tbody>

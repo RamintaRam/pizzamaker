@@ -49,10 +49,10 @@
                 data: {},
                 dataType: 'json',
                 success: function () {
-                    alert('DELETED')
+                    $("#del").fadeOut(1000)
                 },
                 error: function () {
-                    alert('Error');
+                    alert('error');
                 }
             });
         }
