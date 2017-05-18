@@ -20,7 +20,7 @@ class CustomCheck
         if(in_array("member", auth()->user()->rolesConnections->pluck('roles_id')->toArray()))
             return $next($request);
 
-        return abort(403, "no pizzas!");
+        return abort(403, "no pizzas for you, bastard!");
     }
 
 
