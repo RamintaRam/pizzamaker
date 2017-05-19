@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DTResources extends Model
+class DTResources extends CoreModel
 {
     /**
      * @var table name
@@ -14,5 +14,5 @@ class DTResources extends Model
     /**
      * @var tables fillables
      */
-    protected $fillable = ['id', 'mime_type', 'path', 'width', 'height', 'size'];
+    protected $fillable = ['id', 'mime_type', 'path', 'width', 'height'];
 }

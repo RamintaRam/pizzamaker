@@ -169,7 +169,8 @@ Route::group(['prefix' => 'pizzas', 'middleware' => ['auth', 'check-role-member'
     });
 });
 
-Route::get('/game', ['as' => 'front-end.game.index', 'uses' => 'DTResourcesController@index']);
+Route::get('/game', ['as' => 'front-end.game.index', 'uses' => 'DTGameController@index']);
+Route::post('/game', ['uses' => 'DTGameController@store']);
 
 Auth::routes();
 

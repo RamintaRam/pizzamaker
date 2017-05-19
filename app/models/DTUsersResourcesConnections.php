@@ -1,11 +1,13 @@
 <?php
 
-namespace App;
+
+namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DTUsers_Resources_Connections extends Model
+class DTUsersResourcesConnections extends CoreModel
 {
+    public $incrementing = false;
     /**
      * @var table name
      */
@@ -14,20 +16,15 @@ class DTUsers_Resources_Connections extends Model
     /**
      * @var tables fillables
      */
-    protected $fillable = ['users_id', 'resources_id', 'id'];
+    protected $fillable = ['id', 'user_id', 'resources_id'];
 
     /**
      * @var bool
      */
 //    protected $updated_at = false;
 
-public function resource ()
-{
-    return $this->hasOne(DTResources::class, 'id', 'resources_id');
-}
-
-//    public function ingredient (  )
-//    {
-////        return $this->hasOne(DTIngredients::class, 'id', 'ingredients_id');
-//    }
+    public function resource ()
+    {
+        return $this->hasMany(DTUsers::class, 'user_id', 'id');
+    }
 }

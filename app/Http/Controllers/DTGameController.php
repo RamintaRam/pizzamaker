@@ -1,48 +1,61 @@
 <?php namespace App\Http\Controllers;
 
+
 use App\models\DTResources;
+use App\models\DTUsersResourcesConnections;
 use Carbon\Carbon;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller;
 
-class DTResourcesController extends Controller {
+
+class DTGameController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /dtresources
+	 * GET /dtgame
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-
+        $conf['auth'] = (auth()->user());
+        return view('front-end.game', $conf);
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /dtresources/create
+	 * GET /dtgame/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /dtresources
+	 * POST /dtgame
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
+        $resource = request()->file('file');
+
+        $resourceController = new DTResourcesController();
+        $record = $resourceController->upload($resource);
+
+        DTUsersResourcesConnections::create([
+            "user_id" => auth()->user()->id,
+            "resources_id" => $record->id
+        ]);
 
 	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /dtresources/{id}
+	 * GET /dtgame/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -54,7 +67,7 @@ class DTResourcesController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /dtresources/{id}/edit
+	 * GET /dtgame/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -66,7 +79,7 @@ class DTResourcesController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /dtresources/{id}
+	 * PUT /dtgame/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -78,7 +91,7 @@ class DTResourcesController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /dtresources/{id}
+	 * DELETE /dtgame/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -88,25 +101,5 @@ class DTResourcesController extends Controller {
 		//
 	}
 
-    public function upload(UploadedFile $file)
-    {
-        $data =  [
-            "size" => $file->getSize(),
-            "mime_type" => $file->getMimeType(),
-            "path" => $file->getPath(),
-        ];
-
-        $path = 'upload/' . date ("Y/m/d");
-        $filename = Carbon::now()->timestamp . '_' . $file->getClientOriginalName();
-
-        $file->move(public_path($path), $filename);
-
-        $data['path'] = $path . $filename;
-
-
-       return DTResources::create($data);
-
-
-    }
 
 }
