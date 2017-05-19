@@ -20,6 +20,6 @@ class CheckIfAdmin
         if(in_array("super-admin", auth()->user()->rolesConnections->pluck('roles_id')->toArray()))
             return $next($request);
 
-        return abort(403, "no permission!");
+        return abort(403, "no pizzas for you, bastard!");
     }
 }
