@@ -2,6 +2,8 @@
 
 namespace App\models;
 
+use App\DTResources;
+use App\DTUsers_Resources_Connections;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -66,4 +68,16 @@ class DTUsers extends Authenticatable
         return $this->hasMany(DTUsersRolesConnections::class, 'users_id', 'id')
             ->with(['role']);
     }
+
+    public function resourcesConnection ()
+    {
+        return $this->belongsToMany(DTResources::class, 'dt_users_resources_connections', 'users_id', 'resources_id');
+    }
+
+    public function userConnectionWithResources (  )
+    {
+        return $this->hasMany(DTUsers_Resources_Connections::class, 'users_id', 'id')
+            ->with(['resource']);
+    }
+
 }
