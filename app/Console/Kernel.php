@@ -3,9 +3,9 @@
 namespace App\Console;
 
 use App\Console\Commands\CreateAdministrator;
+use App\Console\Commands\CrontabBoldeMachen;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Console\Commands\GiveID;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         CreateAdministrator::class,
-        GiveID::class,
+        CrontabBoldeMachen::class,
     ];
 
     /**
@@ -27,7 +27,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('view:id')->monthly();
+         $schedule->command('make:bold')
+                  ->everyMinute();
     }
 
     /**
